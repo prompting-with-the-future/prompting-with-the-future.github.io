@@ -144,7 +144,7 @@
 <section class="hero is-small">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <h2 class="title is-3 has-text-centered">Video Comparison</h2>
+      <h2 class="title is-3 has-text-centered">Interactive digital twins</h2>
       <div class="video-comparison-container">
         <div class="video-wrapper">
           <video id="video1" class="comparison-video" autoplay muted loop>
@@ -154,10 +154,12 @@
             <source src="static/videos/bird_mesh.mp4" type="video/mp4">
           </video>
         </div>
-        <input type="range" min="0" max="100" value="50" class="slider" id="videoSlider">
+        <div class="slider-container">
+          <input type="range" min="0" max="100" value="50" class="slider" id="videoSlider">
+        </div>
         <div class="slider-label">
-          <span>Video 1</span>
-          <span>Video 2</span>
+          <span>Gaussian Splatting</span>
+          <span>Mesh</span>
         </div>
       </div>
     </div>
