@@ -137,14 +137,14 @@ body {
 .video-comparison-container {
   position: relative;
   width: 100%;
-  max-width: 1400px;
+  max-width: 2000px;
   margin: 0 auto;
 }
 
 .video-wrapper {
   position: relative;
   width: 100%;
-  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  padding-top: 73.24%; /* 1024:750 Aspect Ratio */
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
