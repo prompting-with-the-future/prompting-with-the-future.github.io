@@ -22,33 +22,27 @@ $(document).ready(function() {
 
 // Video Comparison Slider
 document.addEventListener('DOMContentLoaded', function() {
-  const slider = document.getElementById('videoSlider');
-  const sliderHandle = slider.querySelector('.slider-handle');
+  const divisionLine = document.getElementById('divisionLine');
   const video2 = document.getElementById('video2');
   let isDragging = false;
-  let startX;
-  let sliderLeft;
-  let sliderWidth;
 
-  function updateSliderPosition(clientX) {
-    const rect = slider.getBoundingClientRect();
+  function updateDivisionPosition(clientX) {
+    const container = divisionLine.parentElement;
+    const rect = container.getBoundingClientRect();
     const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
     const percentage = (x / rect.width) * 100;
-    sliderHandle.style.left = `${percentage}%`;
+    divisionLine.style.left = `${percentage}%`;
     video2.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
   }
 
   function onMouseDown(e) {
     isDragging = true;
-    startX = e.clientX;
-    sliderLeft = slider.getBoundingClientRect().left;
-    sliderWidth = slider.getBoundingClientRect().width;
     document.body.style.cursor = 'grabbing';
   }
 
   function onMouseMove(e) {
     if (!isDragging) return;
-    updateSliderPosition(e.clientX);
+    updateDivisionPosition(e.clientX);
   }
 
   function onMouseUp() {
@@ -56,16 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.cursor = '';
   }
 
-  function onClick(e) {
-    if (!isDragging) {
-      updateSliderPosition(e.clientX);
-    }
-  }
-
-  if (slider && video2) {
-    slider.addEventListener('mousedown', onMouseDown);
+  if (divisionLine && video2) {
+    divisionLine.addEventListener('mousedown', onMouseDown);
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', onMouseUp);
-    slider.addEventListener('click', onClick);
   }
 });

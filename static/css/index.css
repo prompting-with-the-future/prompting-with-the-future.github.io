@@ -161,6 +161,30 @@ body {
   clip-path: inset(0 50% 0 0);
 }
 
+.division-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: #666;
+  transform: translateX(-50%);
+  cursor: ew-resize;
+  z-index: 10;
+}
+
+.division-line::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: #666;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .slider-container {
   position: relative;
   width: 100%;
