@@ -23,51 +23,49 @@ $(document).ready(function() {
 // Video Comparison Slider
 document.addEventListener('DOMContentLoaded', function() {
   const slider = document.getElementById('videoSlider');
+  const sliderHandle = slider.querySelector('.slider-handle');
   const video2 = document.getElementById('video2');
-  const sliderContainer = document.querySelector('.slider-container');
-  
-  if (slider && video2 && sliderContainer) {
-    // Function to update video clip path
-    function updateVideoClip(value) {
-      video2.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
-      slider.value = value;
+  let isDragging = false;
+  let startX;
+  let sliderLeft;
+  let sliderWidth;
+
+  function updateSliderPosition(clientX) {
+    const rect = slider.getBoundingClientRect();
+    const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+    const percentage = (x / rect.width) * 100;
+    sliderHandle.style.left = `${percentage}%`;
+    video2.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+  }
+
+  function onMouseDown(e) {
+    isDragging = true;
+    startX = e.clientX;
+    sliderLeft = slider.getBoundingClientRect().left;
+    sliderWidth = slider.getBoundingClientRect().width;
+    document.body.style.cursor = 'grabbing';
+  }
+
+  function onMouseMove(e) {
+    if (!isDragging) return;
+    updateSliderPosition(e.clientX);
+  }
+
+  function onMouseUp() {
+    isDragging = false;
+    document.body.style.cursor = '';
+  }
+
+  function onClick(e) {
+    if (!isDragging) {
+      updateSliderPosition(e.clientX);
     }
+  }
 
-    // Handle slider input
-    slider.addEventListener('input', function() {
-      updateVideoClip(this.value);
-    });
-
-    // Handle click on slider container
-    sliderContainer.addEventListener('click', function(e) {
-      const rect = this.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const value = (x / rect.width) * 100;
-      updateVideoClip(Math.max(0, Math.min(100, value)));
-    });
-
-    // Handle drag on slider container
-    let isDragging = false;
-
-    sliderContainer.addEventListener('mousedown', function(e) {
-      isDragging = true;
-      const rect = this.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const value = (x / rect.width) * 100;
-      updateVideoClip(Math.max(0, Math.min(100, value)));
-    });
-
-    document.addEventListener('mousemove', function(e) {
-      if (isDragging) {
-        const rect = sliderContainer.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const value = (x / rect.width) * 100;
-        updateVideoClip(Math.max(0, Math.min(100, value)));
-      }
-    });
-
-    document.addEventListener('mouseup', function() {
-      isDragging = false;
-    });
+  if (slider && video2) {
+    slider.addEventListener('mousedown', onMouseDown);
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', onMouseUp);
+    slider.addEventListener('click', onClick);
   }
 });
