@@ -19,3 +19,16 @@ $(document).ready(function() {
     bulmaSlider.attach();
 
 })
+
+// Video Comparison Slider
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.getElementById('videoSlider');
+  const video2 = document.getElementById('video2');
+  
+  if (slider && video2) {
+    slider.addEventListener('input', function() {
+      const value = this.value;
+      video2.style.clipPath = `inset(0 ${100 - value}% 0 0)`;
+    });
+  }
+});
