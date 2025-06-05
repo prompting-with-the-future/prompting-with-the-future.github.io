@@ -108,4 +108,104 @@ function prevVideoPair() {
 // Initialize the first video pair
 document.addEventListener('DOMContentLoaded', () => {
     updateVideoPair(0, 'right');
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize all video comparisons
+    const divisionLines = document.querySelectorAll('.division-line');
+    const videoContainers = document.querySelectorAll('.video-comparison-container');
+    
+    divisionLines.forEach((divisionLine, index) => {
+        const video2 = divisionLine.parentElement.querySelector('.comparison-video:nth-child(2)');
+        const container = videoContainers[index];
+        let isDragging = false;
+
+        function updateDivisionLine(e) {
+            if (!isDragging) return;
+
+            const containerRect = container.getBoundingClientRect();
+            const x = Math.max(0, Math.min(e.clientX - containerRect.left, containerRect.width));
+            const percentage = (x / containerRect.width) * 100;
+
+            divisionLine.style.left = `${percentage}%`;
+            video2.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+        }
+
+        divisionLine.addEventListener('mousedown', () => {
+            isDragging = true;
+        });
+
+        document.addEventListener('mousemove', updateDivisionLine);
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        // Handle touch events for mobile devices
+        divisionLine.addEventListener('touchstart', () => {
+            isDragging = true;
+        });
+
+        document.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            const touch = e.touches[0];
+            const containerRect = container.getBoundingClientRect();
+            const x = Math.max(0, Math.min(touch.clientX - containerRect.left, containerRect.width));
+            const percentage = (x / containerRect.width) * 100;
+
+            divisionLine.style.left = `${percentage}%`;
+            video2.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+        });
+
+        document.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+    });
+
+    // Initialize digital twin video comparison
+    const twinDivisionLine = document.getElementById('twinDivisionLine');
+    const twinVideo2 = document.getElementById('twin2');
+    const twinContainer = document.querySelector('#digital-twin-carousel .video-comparison-container');
+    let isDragging = false;
+
+    function updateDivisionLine(e) {
+        if (!isDragging) return;
+
+        const containerRect = twinContainer.getBoundingClientRect();
+        const x = Math.max(0, Math.min(e.clientX - containerRect.left, containerRect.width));
+        const percentage = (x / containerRect.width) * 100;
+
+        twinDivisionLine.style.left = `${percentage}%`;
+        twinVideo2.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+    }
+
+    twinDivisionLine.addEventListener('mousedown', () => {
+        isDragging = true;
+    });
+
+    document.addEventListener('mousemove', updateDivisionLine);
+
+    document.addEventListener('mouseup', () => {
+        isDragging = false;
+    });
+
+    // Handle touch events for mobile devices
+    twinDivisionLine.addEventListener('touchstart', () => {
+        isDragging = true;
+    });
+
+    document.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const touch = e.touches[0];
+        const containerRect = twinContainer.getBoundingClientRect();
+        const x = Math.max(0, Math.min(touch.clientX - containerRect.left, containerRect.width));
+        const percentage = (x / containerRect.width) * 100;
+
+        twinDivisionLine.style.left = `${percentage}%`;
+        twinVideo2.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+    });
+
+    document.addEventListener('touchend', () => {
+        isDragging = false;
+    });
 }); 
