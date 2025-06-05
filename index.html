@@ -43,6 +43,7 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <script src="static/js/video-comparison.js"></script>
 </head>
 <body>
 
@@ -149,14 +150,24 @@
     <div class="hero-body">
       <h2 class="title is-3 has-text-centered">Interactive digital twins</h2>
       <div class="video-comparison-container">
+        <button class="nav-arrow nav-left" onclick="prevVideoPair()">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-arrow nav-right" onclick="nextVideoPair()">
+          <i class="fas fa-chevron-right"></i>
+        </button>
         <div class="video-wrapper">
-          <video id="video1" class="comparison-video" autoplay muted loop>
-            <source src="static/videos/bird_gaussian.mp4" type="video/mp4">
-          </video>
-          <video id="video2" class="comparison-video" autoplay muted loop>
-            <source src="static/videos/bird_mesh.mp4" type="video/mp4">
-          </video>
-          <div class="division-line" id="divisionLine"></div>
+          <div class="video-slide-container">
+            <div class="video-slide">
+              <video id="video1" class="comparison-video" autoplay muted loop>
+                <source src="static/videos/bird_gaussian.mp4" type="video/mp4">
+              </video>
+              <video id="video2" class="comparison-video" autoplay muted loop>
+                <source src="static/videos/bird_mesh.mp4" type="video/mp4">
+              </video>
+              <div class="division-line" id="divisionLine"></div>
+            </div>
+          </div>
         </div>
         <div class="slider-label">
           <span>Gaussian</span>
