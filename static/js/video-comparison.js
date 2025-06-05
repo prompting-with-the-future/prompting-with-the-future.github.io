@@ -131,22 +131,23 @@ document.addEventListener('DOMContentLoaded', function() {
             video2.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
         }
 
-        divisionLine.addEventListener('mousedown', () => {
+        function handleMouseDown() {
             isDragging = true;
-        });
+        }
 
-        document.addEventListener('mousemove', updateDivisionLine);
-
-        document.addEventListener('mouseup', () => {
+        function handleMouseUp() {
             isDragging = false;
-        });
+        }
 
-        // Handle touch events for mobile devices
-        divisionLine.addEventListener('touchstart', () => {
+        function handleTouchStart() {
             isDragging = true;
-        });
+        }
 
-        document.addEventListener('touchmove', (e) => {
+        function handleTouchEnd() {
+            isDragging = false;
+        }
+
+        function handleTouchMove(e) {
             if (!isDragging) return;
             const touch = e.touches[0];
             const containerRect = container.getBoundingClientRect();
@@ -155,11 +156,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             divisionLine.style.left = `${percentage}%`;
             video2.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
-        });
+        }
 
-        document.addEventListener('touchend', () => {
-            isDragging = false;
-        });
+        // Add event listeners
+        divisionLine.addEventListener('mousedown', handleMouseDown);
+        document.addEventListener('mousemove', updateDivisionLine);
+        document.addEventListener('mouseup', handleMouseUp);
+        divisionLine.addEventListener('touchstart', handleTouchStart);
+        document.addEventListener('touchmove', handleTouchMove);
+        document.addEventListener('touchend', handleTouchEnd);
     });
 
     // Initialize digital twin video comparison
