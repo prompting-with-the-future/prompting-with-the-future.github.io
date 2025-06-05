@@ -116,8 +116,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const videoContainers = document.querySelectorAll('.video-comparison-container');
     
     divisionLines.forEach((divisionLine, index) => {
-        const video2 = divisionLine.parentElement.querySelector('.comparison-video:nth-child(2)');
         const container = videoContainers[index];
+        const video2 = container.querySelector('.comparison-video:nth-child(2)');
         let isDragging = false;
 
         function updateDivisionLine(e) {
