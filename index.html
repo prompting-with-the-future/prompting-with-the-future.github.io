@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
   <!-- Replace the content tag with appropriate information -->
-  <meta name="description" content="DESCRIPTION META TAG">
-  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
-  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
-  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <meta name="description" content="Prompting with the Future: Open-World Model Predictive Control with Interactive Digital Twins">
+  <meta property="og:title" content="Prompting with the Future: Open-World Model Predictive Control with Interactive Digital Twins"/>
+  <meta property="og:description" content="Prompting with the Future: Open-World Model Predictive Control with Interactive Digital Twins"/>
+  <meta property="og:url" content="./index.html"/>
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
   <meta property="og:image" content="static/image/your_banner_image.png" />
   <meta property="og:image:width" content="1200"/>
@@ -25,7 +25,7 @@
 
 
   <title>Academic Project Page</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="icon" type="image/x-icon" href="static/images/icon.jpg">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -43,6 +43,7 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+  <!-- <script src="static/js/video-comparison.js"></script> -->
 </head>
 <body>
 
@@ -52,28 +53,31 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title publication-title">
+              <span style="font-size: 3.5rem;">Prompting with the Future</span><br>
+              <span style="font-size: 2.5rem;">Open-World Model Predictive Control with Interactive Digital Twins</span>
+            </h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="https://tritiumr.github.io/" target="_blank">Chuanruo Ning</a>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="https://kuanfang.github.io/" target="_blank">Kuan Fang</a><sup>*</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="https://www.cs.cornell.edu/~weichiu/" target="_blank">Wei-Chiu Ma</a><sup>*</sup>,</span>
                   </span>
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <span class="author-block">Cornell University<br>RSS 2025</span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Joint Supervision</small></span>
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="static/pdfs/paper.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -93,7 +97,7 @@
                     </a>
                   </span>
 
-                  <!-- Github link -->
+                  <!-- Github link
                   <span class="link-block">
                     <a href="https://github.com/YOUR REPO HERE" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
@@ -102,9 +106,9 @@
                     </span>
                     <span>Code</span>
                   </a>
-                </span>
+                </span> -->
 
-                <!-- ArXiv abstract Link -->
+                <!-- ArXiv abstract Link
                 <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
@@ -113,7 +117,7 @@
                   </span>
                   <span>arXiv</span>
                 </a>
-              </span>
+              </span> -->
             </div>
           </div>
         </div>
@@ -129,19 +133,54 @@
     <div class="hero-body">
       <video poster="" id="tree" autoplay controls muted loop height="100%">
         <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
+        <source src="static/videos/moving_teaser_1.mp4"
         type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
+        Unlike previous methods that predict actions or intermediate representations given the current observations, we build interactive digital twins to directly provide the future states of different actions to the model and let VLM focus on result evaluation, unlocking the potential of open-world motion planning on diverse tasks.
       </h2>
     </div>
   </div>
 </section>
 <!-- End teaser video -->
 
+<!-- Video Comparison Section -->
+<!-- <section class="hero is-small">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3 has-text-centered">Interactive digital twins</h2>
+      <div class="video-comparison-container">
+        <button class="nav-arrow nav-left" onclick="prevVideoPair()">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-arrow nav-right" onclick="nextVideoPair()">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="video-wrapper">
+          <div class="video-slide-container">
+            <div class="video-slide">
+              <video id="video1" class="comparison-video" autoplay muted loop>
+                <source src="static/videos/bird_gaussian.mp4" type="video/mp4">
+              </video>
+              <video id="video2" class="comparison-video" autoplay muted loop>
+                <source src="static/videos/bird_mesh.mp4" type="video/mp4">
+              </video>
+              <div class="division-line" id="divisionLine"></div>
+            </div>
+          </div>
+        </div>
+        <div class="slider-label">
+          <span>Gaussian</span>
+          <span>Mesh</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End Video Comparison Section -->
+
 <!-- Paper abstract -->
-<section class="section hero is-light">
+<!-- <section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -154,70 +193,80 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End paper abstract -->
 
 
 <!-- Image carousel -->
-<section class="hero is-small">
+<!-- <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
        <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel1.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
+        <video autoplay muted loop>
+          <source src="static/videos/ch.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
+        <video autoplay muted loop>
+          <source src="static/videos/ba.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="MY ALT TEXT"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="MY ALT TEXT"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
+        <video autoplay muted loop>
+          <source src="static/videos/dr.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="item">
+        <video autoplay muted loop>
+          <source src="static/videos/sh.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="item">
+        <video autoplay muted loop>
+          <source src="static/videos/spo.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="item">
+        <video autoplay muted loop>
+          <source src="static/videos/spa.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="item">
+        <video autoplay muted loop>
+          <source src="static/videos/tu.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="item">
+        <video autoplay muted loop>
+          <source src="static/videos/pl.mp4" type="video/mp4">
+        </video>
+      </div>
   </div>
 </div>
 </div>
-</section>
+</section> -->
 <!-- End image carousel -->
 
 
 
 
 <!-- Youtube video -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
-      <!-- Paper video. -->
       <h2 class="title is-3">Video Presentation</h2>
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
           
           <div class="publication-video">
-            <!-- Youtube embed code here -->
             <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
       </div>
     </div>
   </div>
-</section>
+</section> -->
 <!-- End youtube video -->
 
 
@@ -225,26 +274,52 @@
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
       <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
+        <div class="item">
           <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
+            <source src="static/videos/ch.mp4"
             type="video/mp4">
           </video>
         </div>
-        <div class="item item-video2">
+        <div class="item">
           <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
+            <source src="static/videos/ba.mp4"
             type="video/mp4">
           </video>
         </div>
-        <div class="item item-video3">
+        <div class="item">
           <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
+            <source src="static/videos/dr.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" id="video4" autoplay controls muted loop height="100%">\
+            <source src="static/videos/sh.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" id="video5" autoplay controls muted loop height="100%">\
+            <source src="static/videos/spo.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" id="video6" autoplay controls muted loop height="100%">\
+            <source src="static/videos/spa.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" id="video7" autoplay controls muted loop height="100%">\
+            <source src="static/videos/tu.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" id="video8" autoplay controls muted loop height="100%">\
+            <source src="static/videos/pl.mp4"
             type="video/mp4">
           </video>
         </div>
@@ -260,7 +335,7 @@
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -270,28 +345,33 @@
         
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
 
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <h2 class="title">BibTeX</h2>
-      <pre><code>BibTex Code Here</code></pre>
-    </div>
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{ning2025prompting,
+  title={Prompting with the Future: Open-World Model Predictive Control with Interactive Digital Twins},
+  author={Ning, Chuanruo and Fang, Kuan and Ma, Wei-Chiu},
+  booktitle={RSS},
+  year={2025}
+}</code></pre>
+  </div>
 </section>
 <!--End BibTex citation -->
 
 
-  <footer class="footer">
+<footer class="footer">
   <div class="container">
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
