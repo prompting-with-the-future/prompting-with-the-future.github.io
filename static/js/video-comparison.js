@@ -112,59 +112,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all video comparisons
-    const divisionLines = document.querySelectorAll('.division-line');
     const videoContainers = document.querySelectorAll('.video-comparison-container');
-    
-    divisionLines.forEach((divisionLine, index) => {
-        const container = videoContainers[index];
+
+    videoContainers.forEach(container => {
+        const divisionLine = container.querySelector('.division-line');
         const video2 = container.querySelector('.comparison-video:nth-child(2)');
+        if (!divisionLine || !video2) return;     // safety guard
+
         let isDragging = false;
 
-        function updateDivisionLine(e) {
+        function update(e) {
             if (!isDragging) return;
+            const rect = container.getBoundingClientRect();
+            const xPct = ((e.clientX ?? e.touches[0].clientX) - rect.left)
+                        / rect.width * 100;
+            const pct = Math.max(0, Math.min(xPct, 100));
 
-            const containerRect = container.getBoundingClientRect();
-            const x = Math.max(0, Math.min(e.clientX - containerRect.left, containerRect.width));
-            const percentage = (x / containerRect.width) * 100;
-
-            divisionLine.style.left = `${percentage}%`;
-            video2.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
+            divisionLine.style.left = `${pct}%`;
+            video2.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
         }
 
-        function handleMouseDown() {
-            isDragging = true;
-        }
+        divisionLine.addEventListener('mousedown', () => isDragging = true);
+        divisionLine.addEventListener('touchstart', () => isDragging = true);
 
-        function handleMouseUp() {
-            isDragging = false;
-        }
-
-        function handleTouchStart() {
-            isDragging = true;
-        }
-
-        function handleTouchEnd() {
-            isDragging = false;
-        }
-
-        function handleTouchMove(e) {
-            if (!isDragging) return;
-            const touch = e.touches[0];
-            const containerRect = container.getBoundingClientRect();
-            const x = Math.max(0, Math.min(touch.clientX - containerRect.left, containerRect.width));
-            const percentage = (x / containerRect.width) * 100;
-
-            divisionLine.style.left = `${percentage}%`;
-            video2.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
-        }
-
-        // Add event listeners
-        divisionLine.addEventListener('mousedown', handleMouseDown);
-        document.addEventListener('mousemove', updateDivisionLine);
-        document.addEventListener('mouseup', handleMouseUp);
-        divisionLine.addEventListener('touchstart', handleTouchStart);
-        document.addEventListener('touchmove', handleTouchMove);
-        document.addEventListener('touchend', handleTouchEnd);
+        document.addEventListener('mousemove', update);
+        document.addEventListener('touchmove', update);
+        document.addEventListener('mouseup', () => isDragging = false);
+        document.addEventListener('touchend', () => isDragging = false);
     });
 
     // Initialize digital twin video comparison
