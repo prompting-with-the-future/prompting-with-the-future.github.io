@@ -126,6 +126,40 @@
   </div>
 </section>
 
+<!-- ── Multiple‑Choice Demo ────────────────────────────────── -->
+<section class="hero is-light is-small" id="multiple-choice">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-10 has-text-centered">
+
+          <!-- media holder -->
+          <figure class="image is-16by9" id="mc-holder">
+            <!-- thumbnail shown first -->
+            <img id="mc-thumb"
+                 src="static/images/prompt.png"
+                 alt="Question thumbnail">
+            <!-- video appears after a choice is picked -->
+            <video id="mc-video"
+                   class="is-hidden"
+                   controls
+                   playsinline></video>
+          </figure>
+
+          <!-- four choices -->
+          <div id="mc-choices" class="buttons is-centered mt-4">
+            <button class="button is-light" data-video="static/videos/A.mp4">A. Direction: +0.37, +0.93, +0.07, speed: 1.6m/s</button>
+            <button class="button is-light" data-video="static/videos/B.mp4">B. Direction: +0.37, +0.93, +0.07, speed: 1.3m/s</button>
+            <button class="button is-light" data-video="static/videos/C.mp4">C. Direction: +0.41, +0.90, -0.16, speed: 1.5m/s</button>
+            <button class="button is-light" data-video="static/videos/D.mp4">D. Direction: +0.41, +0.90, -0.16, speed: 1.0m/s</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 <!-- Teaser video-->
 <section class="hero teaser">
@@ -144,130 +178,6 @@
 </section>
 <!-- End teaser video -->
 
-
-<!-- Paper abstract -->
-<!-- <section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End paper abstract -->
-
-
-
-<!-- Youtube video -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End youtube video -->
-
-<!-- Video carousel -->
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item">
-          <video poster="" id="video1" autoplay controls muted loop height="100%" style="border-radius: 15px;">
-            <source src="static/videos/pl.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<h2 class="subtitle has-text-centered">
-</br>
-  Prompting with the Future can perform diverse open-world manipulation tasks without any task-specific training or examples.
-</h2> -->
-<!-- End video carousel -->
-
-<!-- Video carousel with Comparison-->
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="digital-twin-carousel" class="carousel results-carousel">
-        <div class="item">
-          <div class="video-comparison-container">
-            <div class="video-wrapper">
-              <div class="video-slide-container">
-                <div class="video-slide">
-                  <video id="bird_twin1" class="comparison-video" autoplay muted loop>
-                    <source src="static/videos/bird_gaussian.mp4" type="video/mp4">
-                  </video>
-                  <video id="bird_twin2" class="comparison-video" autoplay muted loop>
-                    <source src="static/videos/bird_mesh.mp4" type="video/mp4">
-                  </video>
-                  <div class="division-line" id="twinDivisionLine"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="video-comparison-container">
-            <div class="video-wrapper">
-              <div class="video-slide-container">
-                <div class="video-slide">
-                  <video id="plant_twin1" class="comparison-video" autoplay muted loop>
-                    <source src="static/videos/plant_gaussian.mp4" type="video/mp4">
-                  </video>
-                  <video id="plant_twin2" class="comparison-video" autoplay muted loop>
-                    <source src="static/videos/plant_mesh.mp4" type="video/mp4">
-                  </video>
-                  <div class="division-line" id="twinDivisionLine"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <div class="video-comparison-container">
-            <div class="video-wrapper">
-              <div class="video-slide-container">
-                <div class="video-slide">
-                  <video id="bird_twin3" class="comparison-video" autoplay muted loop>
-                    <source src="static/videos/bird_gaussian.mp4" type="video/mp4">
-                  </video>
-                  <video id="bird_twin4" class="comparison-video" autoplay muted loop>
-                    <source src="static/videos/bird_mesh.mp4" type="video/mp4">
-                  </video>
-                  <div class="division-line" id="twinDivisionLine"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<h2 class="subtitle has-text-centered">
-</br>
-  The interactive digital twins closely resemble the real world, modeling the dynamics by meshes and providing photo-realistic rendering by Gaussian splats.
-</h2> -->
-<!-- End video carousel -->
 
 <!-- Video Comparison -->
 <section class="hero is-small">

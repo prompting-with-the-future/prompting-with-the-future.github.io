@@ -238,4 +238,15 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* tiny helper classes for the quiz block */
+#mc-holder img,
+#mc-holder video {
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 8px rgba(0,0,0,.15);
+  transition: opacity .3s ease;
+}
 
+.is-hidden {
+  display: none !important;
+}
