@@ -210,11 +210,11 @@ body {
   left: 50%;
   width: 0;
   height: 0;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(180deg);
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
-  border-left: 12px solid gray;
   border-right: 12px solid gray;
+  border-left: 12px solid gray;
   box-sizing: border-box;
   pointer-events: none;
 }
