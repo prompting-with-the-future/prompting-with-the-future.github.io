@@ -208,30 +208,13 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 24px;
-  height: 16px;
-  transform: translate(-50%, -50%);
-  background: 
-    linear-gradient(45deg, transparent 50%, gray 50%),
-    linear-gradient(-45deg, transparent 50%, gray 50%);
-  background-size: 50% 100%;
-  background-position: left, right;
-  background-repeat: no-repeat;
-  box-sizing: border-box;
-  pointer-events: none;
-}
-
-.division-line .triangle-right {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
   width: 0;
   height: 0;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(180deg);
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
   border-right: 12px solid gray;
+  border-left: 12px solid gray;
   box-sizing: border-box;
   pointer-events: none;
 }
