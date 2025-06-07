@@ -203,6 +203,21 @@ body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
+.division-line::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border-left: 6px solid gray;
+  border-right: 6px solid gray;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
 .slider-label {
   display: flex;
   justify-content: space-between;
