@@ -93,10 +93,13 @@ btn.addEventListener("click", () => {
   const slide  = btn.closest(".video-slide");
   const videos = slide.querySelectorAll("video");
 
-  // select the video with id "tune_real"
+  // select the video with id "tune_real" and "tune_twin"
   const tuneReal = videos.find(v => v.id === "tune_real");
+  const tuneTwin = videos.find(v => v.id === "tune_twin");
   tuneReal.muted = false;           // un‑mute
   tuneReal.play().catch(() => {});  // play (or restart) – ignore race failures
+  tuneTwin.muted = false;           // un‑mute
+  tuneTwin.play().catch(() => {});  // play (or restart) – ignore race failures
 
   // good UX: remove the button so it can’t be clicked again
   btn.remove();
