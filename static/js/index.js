@@ -41,6 +41,14 @@ document.addEventListener("DOMContentLoaded", () => {
       video.src = src;
       video.load();
       video.play();
+
+      // Add event listener for video ended
+      video.addEventListener('ended', () => {
+        setTimeout(() => {
+          video.classList.add("is-hidden");
+          thumb.classList.remove("is-cloaked");
+        }, 3000); // Wait 3 seconds after video ends
+      }, { once: true }); // Use once: true to prevent multiple listeners
     }
 
     buttons.forEach(btn => {
