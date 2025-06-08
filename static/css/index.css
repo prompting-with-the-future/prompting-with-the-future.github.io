@@ -275,6 +275,6 @@ body {
   left: 50%;
   bottom: 12px;
   transform: translateX(-50%);
-  z-index: 4;                /* above everything else */
+  z-index: 100;                /* above everything else */
   pointer-events: auto;      /* insure it’s clickable */
 }
