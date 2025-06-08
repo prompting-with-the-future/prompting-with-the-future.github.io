@@ -87,26 +87,28 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ============================================================
    Enable "Play with sound" in every video‑comparison block
    ============================================================ */
-document.querySelectorAll(".play-sound-btn").forEach(btn => {
-btn.addEventListener("click", () => {
-  // grab all videos
-  const videos = Array.from(document.querySelectorAll("video"));
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll(".play-sound-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    // grab all videos
+    const videos = Array.from(document.querySelectorAll("video"));
 
-  // select the video with id "tune_real" or "tune_twin"
-  const tuneReal = videos.find(v => v.id === "tune_real");
-  const tuneTwin = videos.find(v => v.id === "tune_twin");
+    // select the video with id "tune_real" or "tune_twin"
+    const tuneReal = videos.find(v => v.id === "tune_real");
+    const tuneTwin = videos.find(v => v.id === "tune_twin");
 
-  if (!tuneReal || !tuneTwin) {
-    console.error("Could not find one or both videos");
-    return;
-  }
+    if (!tuneReal || !tuneTwin) {
+      console.error("Could not find one or both videos");
+      return;
+    }
 
-  tuneReal.muted = false;           // un‑mute
-  tuneReal.play().catch(err => console.error("Error playing tune_real:", err));  // play (or restart)
-  tuneTwin.muted = false;           // un‑mute
-  tuneTwin.play().catch(err => console.error("Error playing tune_twin:", err));  // play (or restart)
+    tuneReal.muted = false;           // un‑mute
+    tuneReal.play().catch(err => console.error("Error playing tune_real:", err));  // play (or restart)
+    tuneTwin.muted = false;           // un‑mute
+    tuneTwin.play().catch(err => console.error("Error playing tune_twin:", err));  // play (or restart)
 
-  // good UX: remove the button so it can't be clicked again
-  btn.remove();
-}, { once: true });            // listener self‑destructs anyway
+    // good UX: remove the button so it can't be clicked again
+    btn.remove();
+  }, { once: true });            // listener self‑destructs anyway
+  });
 });
