@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!video.classList.contains("is-hidden")) {
           // video already visible, do nothing
         } else {
-          thumb.classList.add("is-hidden");
+          thumb.classList.add("is-cloaked");
           video.classList.remove("is-hidden");
         }
         loadAndPlay(btn.dataset.video);
