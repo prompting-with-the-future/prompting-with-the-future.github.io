@@ -268,3 +268,13 @@ body {
   opacity: 0 !important;
   visibility: hidden !important;
 }
+
+/* ── Play‑sound button ───────────────────────────────────────── */
+.play-sound-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
+  z-index: 3;                /* above arrows & videos */
+  pointer-events: auto;      /* insure it’s clickable */
+}

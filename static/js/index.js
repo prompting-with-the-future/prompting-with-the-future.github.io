@@ -83,3 +83,22 @@ document.addEventListener("DOMContentLoaded", () => {
   initMultipleChoice("mc-thumb", "mc-video", "mc-choices");
   initMultipleChoice("mc-thumb-two", "mc-video-two", "mc-choices-two");
 });
+
+/* ============================================================
+   Enable “Play with sound” in every video‑comparison block
+   ============================================================ */
+document.querySelectorAll(".play-sound-btn").forEach(btn => {
+btn.addEventListener("click", () => {
+  // grab BOTH videos in the same comparison container
+  const slide  = btn.closest(".video-slide");
+  const videos = slide.querySelectorAll("video");
+
+  videos.forEach(v => {
+    v.muted = false;           // un‑mute
+    v.play().catch(() => {});  // play (or restart) – ignore race failures
+  });
+
+  // good UX: remove the button so it can’t be clicked again
+  btn.remove();
+}, { once: true });            // listener self‑destructs anyway
+});
