@@ -238,15 +238,27 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* tiny helper classes for the quiz block */
-#mc-holder img,
-#mc-holder video {
-  width: 100%;
-  border-radius: 0.5rem;
-  box-shadow: 0 0 8px rgba(0,0,0,.15);
-  transition: opacity .3s ease;
+/* ── Multiple‑Choice media holder ──────────────────────────── */
+.mc-holder {
+  position: relative;          /* enables absolute overlay */
+  display: inline-block;       /* shrinks to media width */
+  width: 100%;                 /* but still scales with layout */
 }
 
-.is-hidden {
-  display: none !important;
+.mc-holder img,
+.mc-holder video {
+  width: 100%;
+  border-radius: .5rem;
+  box-shadow: 0 0 8px rgba(0,0,0,.15);
 }
+
+/* video overlays the image, fills exactly the same box */
+.mc-holder video {
+  position: absolute;
+  inset: 0;                    /* top:0 right:0 bottom:0 left:0 */
+  height: 100%;
+  object-fit: cover;           /* crop if its AR differs */
+}
+
+/* tiny utility */
+.is-hidden { display:none !important; }
