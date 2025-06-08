@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
           video.classList.add("is-hidden");
           thumb.classList.remove("is-cloaked");
-        }, 500); // Wait 0.5 seconds after video ends
+        }, 1000); // Wait 1 second after video ends
       }, { once: true }); // Use once: true to prevent multiple listeners
     }
 
