@@ -60,8 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // Set colors based on button selection
-        if (btn.textContent.includes('B.')) {
-          btn.classList.add('is-success'); // Green for correct answer
+        if (choicesId === "mc-choices" && btn.textContent.includes('B')) {
+          btn.classList.add('is-success'); // Green for correct answer in first section
+        } else if (choicesId === "mc-choices-two" && btn.textContent.includes('C')) {
+          btn.classList.add('is-success'); // Green for correct answer in second section
         } else {
           btn.classList.add('is-danger'); // Red for incorrect answers
         }
