@@ -89,11 +89,10 @@ document.addEventListener("DOMContentLoaded", () => {
    ============================================================ */
 document.querySelectorAll(".play-sound-btn").forEach(btn => {
 btn.addEventListener("click", () => {
-  // grab BOTH videos in the same comparison container
-  const slide  = btn.closest(".video-slide");
-  const videos = slide.querySelectorAll("video");
+  // grab all videos
+  const videos = document.querySelectorAll("video");
 
-  // select the video with id "tune_real" and "tune_twin"
+  // select the video with id "tune_real" or "tune_twin"
   const tuneReal = videos.find(v => v.id === "tune_real");
   const tuneTwin = videos.find(v => v.id === "tune_twin");
   tuneReal.muted = false;           // un‑mute
