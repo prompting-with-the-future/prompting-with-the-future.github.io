@@ -51,6 +51,18 @@ document.addEventListener("DOMContentLoaded", () => {
         video.classList.remove("is-hidden");
       }
       loadAndPlay(btn.dataset.video);
+
+      // Reset all buttons to default state
+      buttons.forEach(b => {
+        b.classList.remove('is-danger', 'is-success');
+      });
+
+      // Set colors based on button selection
+      if (btn.textContent.includes('B.')) {
+        btn.classList.add('is-success'); // Green for correct answer
+      } else {
+        btn.classList.add('is-danger'); // Red for incorrect answers
+      }
     });
   });
 });
