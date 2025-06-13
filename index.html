@@ -149,7 +149,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+        <div class="content">
           <p>
             Open-world robotic manipulation requires robots to perform novel tasks described by free-form language in unstructured settings. While vision-language models (VLMs) offer strong high-level semantic reasoning, they lack the fine-grained physical insight needed for precise low-level control. To address this gap, we introduce Prompting-with-the-Future, a model-predictive control framework that augments VLM-based policies with explicit physics modeling. Our framework builds an interactive digital twin of the workspace from a quick handheld video scan, enabling prediction of future states under candidate action sequences. Instead of asking the VLM to predict actions or results by reasoning dynamics, the framework simulates diverse possible outcomes, renders them as visual prompts with adaptively selected camera viewpoints that expose the most informative physical context. A sampling-based planner then selects the action sequence that the VLM rates as best aligned with the task objective. We validate Prompting-with-the-Future on eight real-world manipulation tasks involving contact-rich interaction, object reorientation, and tool use, demonstrating significantly higher success rates than state-of-the-art VLM-based control methods. Through ablation studies, we further analyze the performance and demonstrate that explicitly modeling physics, while still leveraging VLM semantic strengths, is essential for robust manipulation.
           </p>
