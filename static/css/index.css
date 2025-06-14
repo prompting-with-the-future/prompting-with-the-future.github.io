@@ -281,6 +281,6 @@ body {
 
 /* Custom container size between max-desktop and widescreen */
 .container.is-medium-wide {
-  max-width: 1056px !important;
-  width: 1056px !important;
+  max-width: 960px !important;
+  width: 960px !important;
 }
