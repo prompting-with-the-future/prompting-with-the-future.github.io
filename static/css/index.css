@@ -116,7 +116,7 @@ body {
 
 .results-carousel .item {
   margin: 5px;
-  overflow: hidden;
+  overflow: visible;
   padding: 20px;
   font-size: 0;
 }
@@ -129,7 +129,8 @@ body {
   display: flex !important;
   bottom: -10px;
   position: absolute;
-  z-index: 9999; /* Increased z-index to float above everything */
+  z-index: 9999;
+  background: transparent;
 }
 
 .slider-pagination .slider-page {
