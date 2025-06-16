@@ -127,7 +127,7 @@ body {
 
 .slider-pagination {
   display: flex !important;
-  bottom: -10px;
+  bottom: -5px;
   position: absolute;
   z-index: 10;
 }
