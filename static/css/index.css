@@ -127,9 +127,9 @@ body {
 
 .slider-pagination {
   display: flex !important;
-  bottom: -5px;
+  bottom: -10px;
   position: absolute;
-  z-index: 10;
+  z-index: 9999; /* Increased z-index to float above everything */
 }
 
 .slider-pagination .slider-page {
