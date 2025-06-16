@@ -126,7 +126,7 @@ body {
 }
 
 .slider-pagination {
-  margin-bottom: 20px;
+  bottom: -30px;
 }
 
 .slider-pagination .slider-page {
