@@ -126,6 +126,10 @@ body {
   margin: 0;
 }
 
+.results-carousel .slider-pagination {
+  display: none !important;
+}
+
 .slider-pagination {
   display: flex !important;
   bottom: -15px;
