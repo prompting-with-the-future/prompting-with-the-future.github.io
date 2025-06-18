@@ -111,7 +111,7 @@ body {
 }
 
 .results-carousel {
-  overflow: visible;
+  overflow: hidden;
 }
 
 .results-carousel .item {
@@ -128,7 +128,7 @@ body {
 
 .slider-pagination {
   display: flex !important;
-  bottom: -10px;
+  bottom: -15px;
   position: absolute;
   z-index: 9999;
   background: transparent;
